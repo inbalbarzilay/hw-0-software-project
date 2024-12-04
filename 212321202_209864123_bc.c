@@ -44,7 +44,8 @@ int convertToBase10(int sourceBase) {
             number = number + digit;
         }
         else {
-            continue;
+            printf("Invalid input number!\n");
+            exit(1);
         }
     }
     return number;
