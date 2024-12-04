@@ -5,10 +5,11 @@
 int convertToBase10(int sourceBase) {
     int number = 0;
     char c;
+    int digit;
 
-    while ( (c = getchar() ) != EOF) {
+    while ( (c = getchar()) != EOF) {
         if ((c >= '0' && c <= '9') || (c >= 'a' && c <= 'f')) {
-            int digit;
+            printf("in if");
 
             switch(c) {
                 case 'a':
@@ -43,14 +44,17 @@ int convertToBase10(int sourceBase) {
             number = number + digit;
         }
         else {
-            continue;
+            printf("in else");
+            printf("Invalid input number!\n");
+            exit(1);
         }
     }
     return number;
 }
 
 void convertFromBase10(int targetBase, int number) {
-    int i = -1, temp = number;
+    int i = -1, temp = number, digit;
+    char c;
     
     while (temp != 0) {
         i++;
@@ -58,8 +62,8 @@ void convertFromBase10(int targetBase, int number) {
     }    
 
     while(i != -1) {
-        int digit = number / ((int) pow((double) targetBase, (double) i));
-        char c = digit + '0';
+        digit = number / ((int) pow((double) targetBase, (double) i));
+        c = digit + '0';
         
         switch (digit) {
             case 10:
