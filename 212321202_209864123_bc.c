@@ -9,7 +9,6 @@ int convertToBase10(int sourceBase) {
 
     while ( (c = getchar()) != EOF) {
         if ((c >= '0' && c <= '9') || (c >= 'a' && c <= 'f')) {
-            printf("in if");
 
             switch(c) {
                 case 'a':
@@ -44,9 +43,7 @@ int convertToBase10(int sourceBase) {
             number = number + digit;
         }
         else {
-            printf("in else");
-            printf("Invalid input number!\n");
-            exit(1);
+            continue;
         }
     }
     return number;
