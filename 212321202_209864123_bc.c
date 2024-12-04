@@ -54,6 +54,8 @@ int convertToBase10(int sourceBase) {
 void convertFromBase10(int targetBase, int number) {
     int i = -1, temp = number, digit;
     char c;
+
+    printf("The number in base %d is:\n", targetBase);
     
     while (temp != 0) {
         i++;
@@ -94,7 +96,7 @@ void convertFromBase10(int targetBase, int number) {
 int main() {
     int sourceBase, targetBase; 
 
-    printf("Enter the source base: ");
+    printf("Enter the source base:\n");
     scanf("%d", &sourceBase);
 
     if (sourceBase < 2 || sourceBase > 16) {
@@ -102,7 +104,7 @@ int main() {
         exit(1);
     }
 
-    printf("Enter the target base: ");
+    printf("Enter the target base:\n");
     scanf("%d", &targetBase);
 
     if (targetBase < 2 || sourceBase > 16) {
@@ -110,7 +112,7 @@ int main() {
         exit(1);
     }
     
-    printf("Enter a number in base %d: ", sourceBase);
+    printf("Enter a number in base %d:\n", sourceBase);
     convertFromBase10(targetBase, convertToBase10(sourceBase));
 
     return 0;
