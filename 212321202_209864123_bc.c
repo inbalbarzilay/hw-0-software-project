@@ -7,7 +7,8 @@ int convertToBase10(int sourceBase) {
     char c;
     int digit;
 
-    while ( (c = getchar()) != EOF) {
+    c = getchar();
+    while ( (c = getchar()) != '\n') {
         if ((c >= '0' && c <= '9') || (c >= 'a' && c <= 'f')) {
 
             switch(c) {
